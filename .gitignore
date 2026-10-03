@@ -1,0 +1,7 @@
+# Maven build output
+**/target/
+
+# Local environment files; keep the example template
+.env
+.env.*
+!.env.example

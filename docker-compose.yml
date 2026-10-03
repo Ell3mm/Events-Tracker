@@ -1,0 +1,3 @@
+# Purpose: Define local services for the Spring Boot API and PostgreSQL database.
+# Language: Docker Compose YAML.
+# Author: Lewis McDonald. Date: 2026-10-03.
