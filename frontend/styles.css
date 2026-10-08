@@ -1,3 +1,264 @@
-/* Purpose: Style the event browser, filters, event results, and saved-events view. */
-/* Language: CSS. */
-/* Author: Lewis McDonald. Date: 2026-10-03. */
+:root {
+	--bg: #f5efe8;
+	--panel: #fffdf9;
+	--brand: #a52a2a;
+	--brand-dark: #7f1d1d;
+	--accent: #d8b06c;
+	--text: #1d1d1d;
+	--muted: #5f5a52;
+	--border: #e9d9c2;
+	--success: #2d6a4f;
+	--shadow: 0 14px 30px rgba(39, 25, 15, 0.08);
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	font-family: Arial, Helvetica, sans-serif;
+	background: linear-gradient(180deg, #f9f2e9 0%, #f1e5d6 100%);
+	color: var(--text);
+}
+
+button,
+input,
+textarea,
+select {
+	font: inherit;
+}
+
+.topbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 1rem;
+	padding: 1.5rem 2rem;
+	background: #fffaf2;
+	border-bottom: 2px solid var(--border);
+	position: sticky;
+	top: 0;
+	z-index: 10;
+}
+
+.brand-block {
+	display: flex;
+	flex-direction: column;
+	gap: 0.2rem;
+}
+
+.eyebrow {
+	margin: 0;
+	font-size: 0.75rem;
+	text-transform: uppercase;
+	letter-spacing: 0.14em;
+	color: var(--muted);
+}
+
+h1,
+h2,
+h3,
+p {
+	margin-top: 0;
+}
+
+h1 {
+	margin-bottom: 0;
+	font-size: clamp(1.8rem, 2vw, 2.6rem);
+}
+
+.primary-button {
+	border: none;
+	background: var(--brand);
+	color: #fff;
+	padding: 0.8rem 1.2rem;
+	border-radius: 12px;
+	cursor: pointer;
+	transition: background 0.2s ease;
+}
+
+.primary-button:hover {
+	background: var(--brand-dark);
+}
+
+.page-layout {
+	display: grid;
+	grid-template-columns: 1.6fr 1fr;
+	gap: 1.5rem;
+	padding: 2rem;
+}
+
+.panel {
+	background: var(--panel);
+	border: 1px solid var(--border);
+	border-radius: 18px;
+	box-shadow: var(--shadow);
+	padding: 1.5rem;
+}
+
+.search-box,
+.filter-row,
+.event-form label {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	margin-bottom: 1rem;
+}
+
+input,
+select,
+textarea {
+	border: 1px solid #d3c7b8;
+	border-radius: 10px;
+	padding: 0.75rem 0.85rem;
+	background: #fff;
+}
+
+.two-column-row {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 1rem;
+}
+
+.stats-grid {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 0.75rem;
+	margin: 1.5rem 0;
+}
+
+.stat-box {
+	background: #f8f1e6;
+	border: 1px solid var(--border);
+	border-radius: 12px;
+	padding: 1rem;
+	text-align: center;
+}
+
+.stat-label {
+	display: block;
+	font-size: 0.74rem;
+	color: var(--muted);
+	margin-bottom: 0.3rem;
+	text-transform: uppercase;
+	letter-spacing: 0.08em;
+}
+
+.stat-box strong {
+	font-size: 1.5rem;
+}
+
+.results-header {
+	margin-top: 1.5rem;
+}
+
+.events-list {
+	display: grid;
+	gap: 1rem;
+}
+
+.event-card {
+	background: #fff;
+	border: 1px solid var(--border);
+	border-left: 6px solid var(--brand);
+	border-radius: 14px;
+	padding: 1rem;
+}
+
+.event-card h4 {
+	margin: 0 0 0.35rem;
+	font-size: 1.2rem;
+}
+
+.event-meta {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.6rem;
+	margin-bottom: 0.75rem;
+	color: var(--muted);
+	font-size: 0.92rem;
+}
+
+.event-card p {
+	margin-bottom: 0.85rem;
+	line-height: 1.5;
+}
+
+.tag {
+	display: inline-block;
+	padding: 0.2rem 0.55rem;
+	border-radius: 999px;
+	background: #f0e5cf;
+	color: var(--brand-dark);
+	font-size: 0.75rem;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+.price-pill {
+	display: inline-block;
+	background: #ebf5ef;
+	color: var(--success);
+	border-radius: 999px;
+	padding: 0.3rem 0.6rem;
+	font-size: 0.8rem;
+	font-weight: 700;
+}
+
+.empty-state {
+	background: #fff;
+	border: 1px dashed var(--border);
+	color: var(--muted);
+	border-radius: 12px;
+	padding: 1.25rem;
+	text-align: center;
+}
+
+.event-form {
+	display: flex;
+	flex-direction: column;
+	gap: 0.35rem;
+}
+
+.submit-button {
+	width: 100%;
+	margin-top: 0.5rem;
+}
+
+.form-message {
+	min-height: 1.25rem;
+	margin-top: 1rem;
+	font-weight: 700;
+}
+
+.form-message.success {
+	color: var(--success);
+}
+
+.form-message.error {
+	color: var(--brand);
+}
+
+@media (max-width: 900px) {
+	.page-layout {
+		grid-template-columns: 1fr;
+	}
+
+	.topbar {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+}
+
+@media (max-width: 560px) {
+	.page-layout,
+	.topbar {
+		padding: 1rem;
+	}
+
+	.two-column-row,
+	.stats-grid {
+		grid-template-columns: 1fr;
+	}
+}
