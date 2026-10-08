@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -18,6 +19,7 @@ import uk.co.lewis.mcdonald.events.service.EventService;
 // THIS CONTROLLER EXPOSES THE EVENT ENDPOINTS FOR THE FRONTEND TO USE.
 @RestController
 @RequestMapping("/api")
+@CrossOrigin(origins = {"http://localhost:5500", "http://127.0.0.1:5500"})
 public class EventController {
 
     private final EventService eventService;
