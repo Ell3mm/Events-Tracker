@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Purpose: Declare Spring Boot dependencies, Java version, and build settings for the REST API and tests. -->
-<!-- Language: Maven XML configuration. -->
-<!-- Author: Lewis McDonald. Date: 2026-10-03. -->
+<!-- THIS FILE SETS UP THE JAVA PROJECT FOR THE EVENTS APP. -->
+<!-- THIS TELLS MAVEN WHICH SPRING BOOT DEPENDENCIES TO DOWNLOAD. -->
+<!-- WRITTEN BY LEWIS MCDONALD ON 2026-10-08. -->
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <!-- The parent supplies Spring Boot's managed defaults. -->
+    <!-- THIS PARENT GIVES THE PROJECT THE DEFAULT SPRING BOOT SETTINGS. -->
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -21,14 +21,14 @@
     <name>Edinburgh Events and Venues Tracker</name>
 
     <properties>
-        <!-- Use the Java version installed on your computer. -->
+        <!-- USE THE JAVA VERSION INSTALLED ON THIS COMPUTER. -->
         <java.version>23</java.version>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-webmvc</artifactId>
+            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -37,6 +37,11 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-validation</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <scope>runtime</scope>
         </dependency>
         <dependency>
             <groupId>org.postgresql</groupId>

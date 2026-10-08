@@ -1,3 +1,3 @@
 -- Purpose: Define PostgreSQL tables, relationships, foreign keys, and indexes for tracker data.
--- Language: PostgreSQL SQL.
--- Author: Lewis McDonald. Date: 2026-10-03.
+-- Langugae: PostgreSQL SQL.
+-- Authour: Lewis McDonald. Date: 2026-10-03.
